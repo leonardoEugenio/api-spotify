@@ -1,0 +1,20 @@
+.container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .content{
+    display: block;
+    margin-top: 30vh;
+
+    h1{
+      color: var(--green-ligth);
+    }
+
+    .logo{
+      width: 100%;
+      font-size: 140px;
+      color: var(--green-dark)
+    }
+  }
+}
