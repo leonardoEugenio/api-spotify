@@ -37,7 +37,7 @@
     .div_1{
         
         display: flex;
-        width:45%;
+        max-width:32%;
         align-items: center;
 
         img{
@@ -47,15 +47,55 @@
             border-radius: 10rem ;
         }
     }
-    
+
     .div_2{
+        position: relative;
+        max-width: 32%;  
         display: flex;
-        width:10%;
+        justify-content: center;
+
+        @media (max-width: 1024px) {
+            input {
+                display: none;
+            }
+            .search{
+                display: none;
+            }
+        }
+
+
+        input{
+            width: 500px;
+            height: 45px;
+            text-align: center;
+            margin-right: 40px;
+
+            border: none;
+            border-radius: 10px;
+        }
+
+        .search{
+            position: absolute;
+            left: 10%;
+            width: 10px;
+            height: 45px;
+            margin: 12px 0;
+
+            i{
+                color: var(--dark);
+            }
+        }
+    }
+    
+    .div_3{
+        display: flex;
+        max-width: 32%;
         align-items: center;
         
         button{
+            margin-left: auto;
             background-color: var(--red);
-            width: 70%;
+            width: 200px;
             transition: all 0.3s;
             font-size: 20px;
             i {
