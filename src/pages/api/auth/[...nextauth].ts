@@ -13,11 +13,13 @@ export default NextAuth({
     callbacks: {
         async jwt({ token, account }) {
             if (account) {
-                token.accessToken = account.refresh_token;
+                token.accessToken = account.access_token;
             }
+            
             return token;
         },
-        async session({ session }) {
+        async session({ session, token }) {
+            session.token = token
             return session
         },
     },
