@@ -1,17 +1,31 @@
 .container{
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  
+
+  h1{
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+  }
+
   .content{
-    display: block;
-    margin-top: 30vh;
+    width: 90%;
+    display: flex;   
+    justify-content: space-between;
+    flex-wrap: wrap;
 
     h1{
+      width: 100%;
       color: var(--green-ligth);
+      text-align: center;
     }
 
     .logo{
+      margin-top: 35vh;
       width: 100%;
       font-size: 140px;
       color: var(--green-dark)

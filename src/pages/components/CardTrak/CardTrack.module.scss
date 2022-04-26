@@ -1,0 +1,32 @@
+.card{
+    max-width: 335px;
+    background-color: var(--gray);
+    border: 1px solid var(--green-light);
+    margin-top: 50px;
+    transition: all .8s;
+
+    img{
+        width: 100%;
+        transition: all .8s;
+    }
+    .content{
+        width: 100%;
+        padding: 0 10px;
+        padding-bottom: 15px;
+        text-align: center;
+    }
+    &:hover{
+
+        border-color: var(--green-dark);
+        box-shadow: 10px 0 10px rgba(0, 0, 0, 0.233);
+
+        transition: all .8s;
+
+
+        img{
+            filter: blur(.6px);
+            transition: all .8s;
+
+        }
+    }
+}

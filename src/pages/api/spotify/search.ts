@@ -1,6 +1,5 @@
 import { apiSpotify } from "../../../../services/api";
 import { getSession, useSession } from 'next-auth/react';
-import { NextRequest } from "next/server";
 
 export async function search(query : string) {
     
@@ -13,6 +12,6 @@ export async function search(query : string) {
             return traks.items = undefined
         }
         
-        return traks.items
+        return  JSON.stringify(traks.items) 
     }
 }
