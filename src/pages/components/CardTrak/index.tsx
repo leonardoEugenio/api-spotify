@@ -1,19 +1,25 @@
+import { tracksType } from '../../../services/types'
 import style from './CardTrack.module.scss'
 
-export function CardTrack() {
-    return (
-        <div className={style.card}>
-            <a>
-                <img src="./images/genericMusica.png" alt="Violão marom em cima de uma partitura" />
-            </a>
-            <div className={style.content}>
-                <a>
-                    <h3>Titulo</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. A modi est sunt rem earum obcaecati?
-                    </p>
+interface props {
+    track : tracksType
+}
+
+export function CardTrack(props : props){
+        const {track} = props
+        
+        return (
+
+            <div key={track.external_ids.isrc} className={style.card}>
+                <a target={'_blank'} href={track.external_urls.spotify}>
+                    <img src={track.album.images[0].url} alt={track.name} />
                 </a>
+                <div className={style.content}>
+                    <a target={'_blank'} href={track.external_urls.spotify}>
+                        <h3>{track.name}</h3>
+                    </a>
+                </div>
             </div>
-        </div>
-    )
+
+        )
 }
