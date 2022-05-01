@@ -3,7 +3,6 @@ import UserImg from './UserImg'
 import { signIn, useSession, signOut } from 'next-auth/react'
 import { FaUser, FaSearch } from 'react-icons/fa'
 import { IoMdExit } from 'react-icons/io'
-import { search } from '../../api/spotify/search'
 import { InputShearch } from './inputShearch'
 
 export default function Header() {
