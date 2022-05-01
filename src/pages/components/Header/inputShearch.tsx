@@ -1,24 +1,38 @@
 import { FaSearch } from 'react-icons/fa'
 import styles from './Header.module.scss'
+import { getSession } from 'next-auth/react';
+import { SessionType } from '../../../services/types';
+import { useTracks } from '../hooks/useTracks';
 import { useState } from 'react';
-import { search } from '../../api/spotify/search';
-import { HandleTraks } from '../..';
 
 export function InputShearch() {
-    async function handleValue(input: string) {
-        await HandleTraks(search(input))
+
+    const [inputValue, SetInputValue] = useState("")
+
+    function updateInput(input : string){
+        SetInputValue(input)
     }
 
+    const {sheareTracks} = useTracks()
+    async function handleValue() {
+        const Session : SessionType =  await getSession()
+        const {accessToken} = Session.token
+        await sheareTracks(inputValue, accessToken)
+    }
+    
+
+    
     return (
         <>
             <div className={styles.search}>
-                <i>
-                    <FaSearch />
-                </i>
+                <button onClick={() => {handleValue()}}>
+                    <i>
+                        <FaSearch />
+                    </i>
+                </button>
             </div>
-            <input id='inputValue' placeholder='Search for track' type="text" onChange={(e) => {
-                handleValue(e.target.value)
-            }} />
+            <input value={inputValue} placeholder='Search for track' type="text" onChange={ (e) => {
+                updateInput(e.target.value)}} />
         </>
     )
 }
