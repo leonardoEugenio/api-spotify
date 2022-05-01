@@ -69,17 +69,21 @@
             height: 45px;
             text-align: center;
             margin-right: 40px;
-
             border: none;
             border-radius: 10px;
         }
 
         .search{
             position: absolute;
-            left: 10%;
+            top: 0;
+            right: 10%;
             width: 10px;
             height: 45px;
-            margin: 12px 0;
+
+            button{
+                padding: auto;
+                border-radius: 10rem 4rem 4rem 10rem;
+            }
 
             i{
                 color: var(--dark);

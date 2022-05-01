@@ -15,10 +15,10 @@
   .content{
     width: 90%;
     display: flex;   
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
-
-    h1{
+    
+    .titleContent{
       width: 100%;
       color: var(--green-ligth);
       text-align: center;

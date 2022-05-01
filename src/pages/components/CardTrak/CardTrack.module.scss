@@ -2,31 +2,33 @@
     max-width: 335px;
     background-color: var(--gray);
     border: 1px solid var(--green-light);
-    margin-top: 50px;
     transition: all .8s;
-
+    margin: 0 3.7vh;
+    margin-top: 50px;
+    
     img{
         width: 100%;
         transition: all .8s;
     }
     .content{
+        display: flex;
         width: 100%;
         padding: 0 10px;
         padding-bottom: 15px;
-        text-align: center;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
     }
     &:hover{
 
         border-color: var(--green-dark);
         box-shadow: 10px 0 10px rgba(0, 0, 0, 0.233);
-
-        transition: all .8s;
+        transition: all .3s;
 
 
         img{
             filter: blur(.6px);
-            transition: all .8s;
-
+            transition: all .5s;
         }
     }
 }
